@@ -3,12 +3,7 @@
     <v-navigation-drawer persistent :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" enable-resize-watcher>
       <v-list>
         <v-list-tile value="true" v-for="(item, i) in items" :key="i">
-          <v-list-tile-action>
-            <v-icon light v-html="item.icon"></v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"></v-list-tile-title>
-          </v-list-tile-content>
+          <v-icon v-html="item.icon"></v-icon><router-link tag="li" :to="item.to">&nbsp;{{item.title}}</router-link>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
@@ -17,7 +12,7 @@
       <v-btn icon light @click.stop="miniVariant = !miniVariant">
         <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
       </v-btn>
-      <v-toolbar-title v-text="title"></v-toolbar-title>
+      <v-toolbar-title v-text="$route.meta.title"></v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
     <main>
@@ -29,16 +24,6 @@
         </v-slide-y-transition>
       </v-container>
     </main>
-    <v-navigation-drawer temporary :right="right" v-model="rightDrawer">
-      <v-list>
-        <v-list-tile @click="right = !right">
-          <v-list-tile-action>
-            <v-icon light>compare_arrows</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
     <v-footer :fixed="fixed">
       <span>&copy; University Course Manager 2017</span>
     </v-footer>
@@ -53,7 +38,8 @@
         drawer: true,
         fixed: true,
         items: [
-          { icon: 'bubble_chart', title: 'Inspire' }
+          { icon: 'bubble_chart', title: 'Home', to: '/Home' },
+          { icon: 'bubble_chart', title: 'Curso', to: '/CursoMaestro' }
         ],
         miniVariant: false,
         right: true,
