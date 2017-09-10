@@ -1,6 +1,7 @@
 <template>
     <div id="Home">
-        <h3>Hola</h3>
+        <img src="../../assets/img/cap.png">
+        <h3 class="title_gestor">Gestor de cursos univesitarios</h3>
     </div>
 </template>
 
