@@ -1,5 +1,5 @@
 export default {
-  name: 'CursoMaestro',
+  name: 'AlumnoMaestro',
   data () {
     return {
       items: [],
@@ -12,7 +12,7 @@ export default {
       let _this = this
       $.ajax({
         type: 'GET',
-        url: 'http://localhost:50745/api/Cursos',   
+        url: 'http://localhost:50745/api/Alumnos',   
         success: function (response) {
           _this.items = JSON.parse(JSON.stringify(response))
         },
@@ -40,7 +40,7 @@ export default {
             if(result){
               $.ajax({
                 type: 'DELETE',
-                url: 'http://localhost:50745/api/Cursos/' + id,
+                url: 'http://localhost:50745/api/Alumnos/' + id,
                 success: function (response) {
                 },
                 error: function(error){

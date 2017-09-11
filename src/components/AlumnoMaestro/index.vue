@@ -1,5 +1,5 @@
 <template>
-    <div id="CursoMaestro">
+    <div id="AlumnoMaestro">
       <div class="container-fluid">
         <div id="barra_botones" class="row">
           <v-flex xs12>
@@ -9,7 +9,7 @@
           </v-flex>
         </div>
         <div v-if="items.length < 1">
-          <h3>No existen cursos insertadas</h3>
+          <h3>No existen alumnos insertados</h3>
         </div>
         <div v-else>
         <v-container fluid style="min-height: 0;" grid-list-lg v-for="item in items">
@@ -21,8 +21,8 @@
                     <v-flex xs9>
                       <router-link @click.native.stop="" :to="{ name: 'AlumnoDetalle', params: { id: item.Id }}">
                         <div>
-                          <div class="headline">{{item.Rama}}</div>
-                          <div>{{item.Carrera}}</div>
+                          <div class="headline">{{item.Nombre}}</div>
+                          <div>{{item.Apellidos}}</div>
                         </div>
                       </router-link>
                     </v-flex>

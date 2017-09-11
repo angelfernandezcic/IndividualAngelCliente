@@ -8,11 +8,11 @@
 									<i class="fa fa-mail-reply"></i> Volver
 								</button>
 							</div>
-							<div v-if="Object.keys(tareaFiltradaBackUp).length" class="col-xs-6">
+							<div v-if="Object.keys(alumnoFiltradoBackUp).length" class="col-xs-6">
 								<button @click="activarEdicion(isEditable = !isEditable)" class="btn btn-default">Editar</button>
 							</div>
 							<div class="col-xs-9 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-								<h2>{{!Object.keys(tareaFiltradaBackUp).length?"Inserte tarea nueva":"Detalle de la tarea"}}</h2>
+								<h2>{{!Object.keys(alumnoFiltradoBackUp).length?"Inserte tarea nueva":"Detalle de la tarea"}}</h2>
 							</div>
 						</div>
         	</div>
@@ -22,15 +22,15 @@
 			        <div class="col-xs-12 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">  
 						  	<label class="col-xs-3">Nombre: </label>
 								<div class="col-xs-9">
-									<input v-bind:disabled="!isEditable" v-model="tareaFiltrada.Nombre" type="text" class="form-control" aria-label="Nombre" >
+									<input v-bind:disabled="!isEditable" v-model="alumnoFiltrado.Nombre" type="text" class="form-control" aria-label="Nombre" >
 								</div>
 							</div>
 						</div>
 						<div class="row">    
 			        <div class="col-xs-12 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">		
-						  	<label class="col-xs-3">Descripcion: </label>
+						  	<label class="col-xs-3">Apellidos: </label>
 								<div class="col-xs-9">
-									<input v-bind:disabled="!isEditable" v-model="tareaFiltrada.Descripcion" type="text" class="form-control" aria-label="Descripcion" >
+									<input v-bind:disabled="!isEditable" v-model="alumnoFiltrado.Apellidos" type="text" class="form-control" aria-label="Descripcion" >
 								</div>
 							</div>
 						</div>
@@ -96,5 +96,5 @@
     </div>
 </template>
 
-<script src="./CursoDetalle.js" type="text/javascript" charset="utf-8"></script>
-<style src="./CursoDetalle.css" type="text/css" media="screen"></style>
+<script src="./AlumnoDetalle.js" type="text/javascript" charset="utf-8"></script>
+<style src="./AlumnoDetalle.css" type="text/css" media="screen"></style>
