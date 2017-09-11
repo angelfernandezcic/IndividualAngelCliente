@@ -3,8 +3,8 @@
       <div class="container-fluid">
         <div id="barra_botones" class="row">
           <v-flex xs12>
-            <v-btn id="insertar" @click="$router.push('/CursoDetalle')" class="btn btn-default">
-              <i class="fa fa-plus"></i> Insertar cursos
+            <v-btn id="insertar" @click="$router.push('/AlumnoDetalle')" class="btn btn-default">
+              <i class="fa fa-plus"></i> Insertar Alumno
             </v-btn>
           </v-flex>
         </div>
@@ -19,7 +19,7 @@
                 <v-container fluid grid-list-lg>
                   <v-layout row>
                     <v-flex xs9>
-                      <router-link @click.native.stop="" :to="{ name: 'CursoDetalle', params: { id: item.Id }}">
+                      <router-link @click.native.stop="" :to="{ name: 'AlumnoDetalle', params: { id: item.Id }}">
                         <div>
                           <div class="headline">{{item.Rama}}</div>
                           <div>{{item.Carrera}}</div>
@@ -40,5 +40,5 @@
     </div>
 </template>
 
-<script src="./CursoMaestro.js" type="text/javascript" charset="utf-8"></script>
-<style src="./CursoMaestro.css" type="text/css" media="screen"></style>
+<script src="./AlumnoMaestro.js" type="text/javascript" charset="utf-8"></script>
+<style src="./AlumnoMaestro.css" type="text/css" media="screen"></style>
