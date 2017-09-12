@@ -16,7 +16,9 @@
       <v-container fluid>
         <v-slide-y-transition mode="out-in">
           <v-layout column align-center>
-            <router-view></router-view>
+            <transition name="fade" mode="out-in">
+              <router-view></router-view>
+            </transition>
           </v-layout>
         </v-slide-y-transition>
       </v-container>

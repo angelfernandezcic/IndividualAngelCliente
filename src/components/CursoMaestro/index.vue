@@ -4,7 +4,7 @@
         <div id="barra_botones" class="row">
           <v-flex xs12>
             <v-btn id="insertar" @click="$router.push('/CursoDetalle')" class="btn btn-default">
-              <i class="fa fa-plus"></i> Insertar cursos
+              <i class="fa fa-plus"></i>&nbsp;Insertar cursos
             </v-btn>
           </v-flex>
         </div>
@@ -12,7 +12,7 @@
           <h3>No existen cursos insertadas</h3>
         </div>
         <div v-else>
-        <v-container fluid style="min-height: 0;" grid-list-lg v-for="item in items">
+        <v-container fluid style="min-height: 0;" grid-list-lg v-for="item in items" :key="item.Id">
           <v-layout row wrap>
             <v-flex xs12>
               <v-card class="light-green accent-4 white--text">
@@ -27,7 +27,7 @@
                       </router-link>
                     </v-flex>
                     <v-flex xs3>
-                      <v-btn flat dark @click="eliminarObjeto(item.Id)"><i class="fa fa-trash"></i> Eliminar</v-btn>
+                      <v-btn block flat dark @click="eliminarObjeto(item.Id)" id="botonEliminar"><i class="fa fa-trash"></i>&nbsp;Eliminar</v-btn>
                     </v-flex>
                   </v-layout>
                 </v-container>

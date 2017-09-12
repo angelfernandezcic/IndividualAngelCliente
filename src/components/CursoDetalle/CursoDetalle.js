@@ -2,8 +2,15 @@ var _ = require('lodash');
 export default {
   name: 'Detail',
   data() {
-    return { 
-      cursoFiltrado: {}, 
+    return {
+      rules: {
+        anyo: (value) => {
+            console.log(value)
+            const pattern = /^[1-4]$/
+            return pattern.test(value) || 'Años no validos'
+          }
+      }, 
+      cursoFiltrado: { Rama: ""}, 
       cursoFiltradoBackUp: {}, 
       isEditable: false, 
       ramas: null,
@@ -23,7 +30,8 @@ export default {
         { text: 'Caminos' },
         { text: 'Industriales' },
         { text: 'Informatica' },
-        { text: 'Matematicas' }
+        { text: 'Matematicas' },
+        { text: 'Ingenieria Electronica' }
       ]
     }
   },
@@ -55,9 +63,6 @@ export default {
   methods: {
     notValid: function () {
       var mensaje = "";
-      if (!this.cursoFiltrado.Alumnos || this.cursoFiltrado.Alumnos.length <= 0 || this.cursoFiltrado.Formato.length > 200) {
-        mensaje += "&#9888; Formato tiene que tener entre 1 y 200 caracteres.<br>";
-      }
 
       return mensaje;
     },
@@ -102,7 +107,7 @@ export default {
         data: _this.cursoFiltrado,
         success: (response) => {
           _this.cursoFiltrado = {};
-          _this.$router.push('/TareaMaestro');
+          _this.$router.push('/CursoMaestro');
         },
         error: (error) => {
           debugger

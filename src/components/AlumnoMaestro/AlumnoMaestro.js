@@ -1,10 +1,12 @@
+var _ = require('lodash');
 export default {
   name: 'AlumnoMaestro',
   data () {
     return {
       items: [],
       isOpen: false,
-      itemInsercion: {}
+      itemInsercion: {},
+      apellidosAlumnos: ""
     }
   },
   methods: {
@@ -53,6 +55,11 @@ export default {
             }
         }
       });
+    }
+  },
+  computed: {
+    filtroAlumnos () {
+      _.union(items, apellidosAlumnos)
     }
   },
   created: function () {

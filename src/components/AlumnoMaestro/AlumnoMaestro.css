@@ -1,3 +1,7 @@
-#CursoMaestro {
+#AlumnoMaestro {
     width: 100%;
+}
+
+#botonEliminar {
+	background-color: #ff0000 !important;
 }

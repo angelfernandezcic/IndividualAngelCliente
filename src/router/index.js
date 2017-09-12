@@ -29,7 +29,7 @@ export default new Router({
       meta: {title: 'Detalle de Curso'}
     },
     {
-      path: '/CursoDetalle/:id',
+      path: '/CursoDetalle/:Id',
       name: 'CursoDetalleId',
       component: CursoDetalle,
       meta: {title: 'Detalle de Curso'}
@@ -47,10 +47,11 @@ export default new Router({
       meta: {title: 'Detalle de Alumno'}
     },
     {
-      path: '/AlumnoDetalle/:id',
+      path: '/AlumnoDetalle/:Id',
       name: 'AlumnoDetalleId',
       component: AlumnoDetalle,
       meta: {title: 'Detalle de Alumno'}
     }
-  ]
+  ],
+  mode: 'hash'
 })
