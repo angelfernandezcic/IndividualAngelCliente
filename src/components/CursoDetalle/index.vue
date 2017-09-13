@@ -23,7 +23,7 @@
 							<v-subheader class="grey--text text--lighten-1" v-text="'Rama'"></v-subheader>
 						</v-flex>
 						<v-flex xs6>
-							<v-select v-bind:disabled="!isEditable" required v-bind:items="itemsRamas" v-model="cursoFiltrado.Rama" label="Seleccione la rama" dark item-value="text"></v-select>
+							<v-select v-bind:disabled="!isEditable" v-bind:items="itemsRamas" v-model="cursoFiltrado.Rama" label="Seleccione la rama" dark item-value="text"></v-select>
 						</v-flex>
 					</v-layout>
 					<v-layout row wrap>
@@ -31,8 +31,8 @@
 							<v-subheader class="grey--text text--lighten-1" v-text="'Carrera'"></v-subheader>
 						</v-flex>
 						<v-flex xs6>
-							<v-select v-bind:disabled="!isEditable" v-if="cursoFiltrado.Rama === 'Letras'" v-bind:items="itemsCarrerasLetras" v-model="cursoFiltrado.Carrera" label="Seleccione la carrera" dark item-value="text" required=true></v-select>
-							<v-select v-bind:disabled="!isEditable" v-if="cursoFiltrado.Rama === 'Ciencias'" v-bind:items="itemsCarrerasCiencias" v-model="cursoFiltrado.Carrera" label="Seleccione la carrera" dark item-value="text" required=true></v-select>
+							<v-select v-bind:disabled="!isEditable" v-if="cursoFiltrado.Rama === 'Letras'" v-bind:items="itemsCarrerasLetras" v-model="cursoFiltrado.Carrera" label="Seleccione la carrera" dark item-value="text"></v-select>
+							<v-select v-bind:disabled="!isEditable" v-if="cursoFiltrado.Rama === 'Ciencias'" v-bind:items="itemsCarrerasCiencias" v-model="cursoFiltrado.Carrera" label="Seleccione la carrera" dark item-value="text"></v-select>
 						</v-flex>
 					</v-layout>
 					<v-layout row>
@@ -60,9 +60,9 @@
           </v-flex>
         </v-layout>
 				<div class="row">
-						<v-btn @click="cancelarEdicion()" id="boton_cancelar" class="btn btn-default">
-							<i class="fa fa-times"></i>&nbsp;Cancelar
-						</v-btn>
+						<!-- <v-btn @click="cancelarEdicion()" id="boton_cancelar" class="btn btn-default">
+							<i class="fa fa-times"></i>&nbsp;Reiniciar
+						</v-btn> -->
 
 						<v-btn v-if="!Object.keys(cursoFiltradoBackUp).length" @click="guardarDatos()" id="boton_guardar" class="btn btn-default">
 							<i class="fa fa-floppy-o"></i>&nbsp;Guardar

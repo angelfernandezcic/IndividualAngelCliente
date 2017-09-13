@@ -93,9 +93,9 @@
 				</v-flex>
 			</v-layout>
             <v-layout row id="fila_final">
-				<v-btn @click="cancelarEdicion()" id="boton_cancelar" class="btn btn-default">
-					<i class="fa fa-times"></i>&nbsp;Cancelar
-				</v-btn>
+				<!-- <v-btn @click="cancelarEdicion()" id="boton_cancelar" class="btn btn-default">
+					<i class="fa fa-times"></i>&nbsp;Reiniciar
+				</v-btn> -->
 				<v-btn v-if="!Object.keys(alumnoFiltradoBackUp).length" @click="guardarDatos()" id="boton_guardar" class="btn btn-default">
 					<i class="fa fa-floppy-o"></i>&nbsp;Guardar
 				</v-btn>

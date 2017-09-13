@@ -4,7 +4,7 @@
         <div id="barra_botones" class="row">
           <v-flex xs12>
             <v-btn id="insertar" @click="$router.push('/CursoDetalle')" class="btn btn-default">
-              <i class="fa fa-plus"></i>&nbsp;Insertar cursos
+              <i class="fa fa-plus"></i>&nbsp;Insertar
             </v-btn>
           </v-flex>
         </div>

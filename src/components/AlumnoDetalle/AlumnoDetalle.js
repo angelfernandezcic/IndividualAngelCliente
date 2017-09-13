@@ -1,8 +1,11 @@
 export default {
   name: 'Detail',
-  data() {
-    
-    return { alumnoFiltrado: {Nombre: "", Apellidos: "", DNI: "", Direccion: "", Localidad: "", Creditos: "", Fecha: "", Beca: false}, alumnoFiltradoBackUp: {}, isEditable: false,  modal: false }
+  data() { 
+    return { 
+      alumnoFiltrado: { Nombre: "", Apellidos: "", DNI: "", Direccion: "", Localidad: "", Creditos: "", Fecha: "", Beca: false },
+      alumnoFiltradoBackUp: {},
+      isEditable: false,
+      modal: false }
   },
   created (){
   	this.getID()

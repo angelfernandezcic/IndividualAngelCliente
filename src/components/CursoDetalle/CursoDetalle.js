@@ -3,7 +3,7 @@ export default {
   name: 'Detail',
   data() {
     return {
-      cursoFiltrado: { Rama: ""}, 
+      cursoFiltrado: { Rama: "", Carrera: "", Anyo: "", Creditos: "", Alumnos: "" }, 
       cursoFiltradoBackUp: {}, 
       isEditable: false, 
       itemsRamas: [
@@ -55,6 +55,12 @@ export default {
   methods: {
     notValid: function () {
       var mensaje = "";
+        if (!this.cursoFiltrado.Rama || this.cursoFiltrado.Rama.length < 0) {
+        mensaje += "&#9888; Rama debe tener algun valor.<br>";
+        }
+        if (!this.cursoFiltrado.Carrera || this.cursoFiltrado.Carrera.length < 0) {
+        mensaje += "&#9888; Carrera debe tener algun valor.<br>";
+        }
         if (!this.cursoFiltrado.Anyo || this.cursoFiltrado.Anyo < 0 || this.cursoFiltrado.Anyo > 4) {
         mensaje += "&#9888; Tiene que tener valor entre 1 y 4 años.<br>";
         }
