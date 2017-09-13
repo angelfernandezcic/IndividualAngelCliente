@@ -2,9 +2,11 @@
   <v-app dark>
     <v-navigation-drawer persistent :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" enable-resize-watcher>
       <v-list>
-        <v-list-tile value="true" v-for="(item, i) in items" :key="i">
-          <v-icon v-html="item.icon"></v-icon><router-link tag="li" :to="item.to" class="white--text">&nbsp;{{item.title}}</router-link>
-        </v-list-tile>
+        <router-link v-for="(item, i) in items" :key="i" tag="div" :to="item.to" class="white--text">
+          <v-list-tile value="true" >
+            <v-icon v-html="item.icon"></v-icon>&nbsp;{{item.title}}
+          </v-list-tile>
+        </router-link>
       </v-list>
     </v-navigation-drawer>
     <v-toolbar fixed class="light-green accent-4">
@@ -42,6 +44,14 @@
 #fila_final {
   padding-bottom: 50px;
 }
+
+.router-link-exact-active {
+  background-color: #64dd17 !important;
+}
+
+.list__tile {
+  color: #fff !important;
+}
 </style>
 
 <script>
@@ -53,8 +63,8 @@
         fixed: true,
         items: [
           { icon: 'home', title: 'Home', to: '/' },
-          { icon: 'group', title: 'Alumno', to: '/AlumnoMaestro' },
-          { icon: 'school', title: 'Curso', to: '/CursoMaestro' }
+          { icon: 'group', title: 'Alumnos', to: '/AlumnoMaestro' },
+          { icon: 'school', title: 'Cursos', to: '/CursoMaestro' }
         ],
         miniVariant: false,
         right: true,
