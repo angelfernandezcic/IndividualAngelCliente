@@ -3,17 +3,9 @@ export default {
   name: 'Detail',
   data() {
     return {
-      rules: {
-        anyo: (value) => {
-            console.log(value)
-            const pattern = /^[1-4]$/
-            return pattern.test(value) || 'Años no validos'
-          }
-      }, 
       cursoFiltrado: { Rama: ""}, 
       cursoFiltradoBackUp: {}, 
       isEditable: false, 
-      ramas: null,
       itemsRamas: [
         { text: 'Ciencias' }, 
         { text: 'Letras' }
@@ -63,7 +55,15 @@ export default {
   methods: {
     notValid: function () {
       var mensaje = "";
-
+        if (!this.cursoFiltrado.Anyo || this.cursoFiltrado.Anyo < 0 || this.cursoFiltrado.Anyo > 4) {
+        mensaje += "&#9888; Tiene que tener valor entre 1 y 4 años.<br>";
+        }
+        if (!this.cursoFiltrado.Creditos || this.cursoFiltrado.Creditos < 0 || this.cursoFiltrado.Creditos > 240) {
+        mensaje += "&#9888; Tiene que tener valor entre 1 y 240 creditos.<br>";
+        }
+        if (!this.cursoFiltrado.Creditos || this.cursoFiltrado.Creditos < 0 || this.cursoFiltrado.Creditos >= 500) {
+        mensaje += "&#9888; Tiene que tener valor de alumnos entre 1 y 500.<br>";
+        }
       return mensaje;
     },
     cancelarEdicion() {

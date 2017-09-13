@@ -63,18 +63,17 @@
 					<v-subheader class="grey--text text--lighten-1">Fecha de Nacimiento</v-subheader>
 				</v-flex>
       			<v-flex xs8>
-        			<v-menu lazy :close-on-content-click="false" v-model="menu" transition="scale-transition" offset-y full-width :nudge-left="40" max-width="290px">
-          				<v-text-field v-bind:disabled="!isEditable" slot="activator" label="Fecha de nacimiento" v-model="alumnoFiltrado.Fecha" readonly>
-          				</v-text-field>
-          				<v-date-picker v-model="alumnoFiltrado.Fecha" no-title scrollable actions>
-				            <template scope="{ save, cancel }">
-				              <v-card-actions>
-				                <v-btn flat primary @click.native="cancel()">Cancelar</v-btn>
-				                <v-btn flat primary @click.native="save()">Guardar</v-btn>
-				              </v-card-actions>
-				            </template>
-				        </v-date-picker>
-				    </v-menu>
+      				<v-dialog persistent v-model="modal" lazy full-width>
+			          <v-text-field v-bind:disabled="!isEditable" slot="activator" label="Fecha de nacimiento" v-model="alumnoFiltrado.Fecha" readonly></v-text-field>
+			          <v-date-picker v-model="alumnoFiltrado.Fecha" formatted-value="DD/MM/YYYY" dark scrollable locale="es-sp" first-day-of-week="1">
+			            <template scope="{ save, cancel }">
+			              <v-card-actions>
+			                <v-btn flat primary @click.native="cancel()">Cancelar</v-btn>
+			                <v-btn flat primary @click.native="save()">Guardar</v-btn>
+			              </v-card-actions>
+			            </template>
+			          </v-date-picker>
+			        </v-dialog>
 				</v-flex>
 			</v-layout>
 			<v-layout row>
@@ -93,7 +92,7 @@
 					<v-switch v-bind:disabled="!isEditable" v-model="alumnoFiltrado.Beca" dark></v-switch>
 				</v-flex>
 			</v-layout>
-            <v-layout row>
+            <v-layout row id="fila_final">
 				<v-btn @click="cancelarEdicion()" id="boton_cancelar" class="btn btn-default">
 					<i class="fa fa-times"></i>&nbsp;Cancelar
 				</v-btn>

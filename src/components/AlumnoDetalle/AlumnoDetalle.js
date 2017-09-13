@@ -2,7 +2,7 @@ export default {
   name: 'Detail',
   data() {
     
-    return { alumnoFiltrado: {}, alumnoFiltradoBackUp: {}, isEditable: false, menu: false }
+    return { alumnoFiltrado: {Nombre: "", Apellidos: "", DNI: "", Direccion: "", Localidad: "", Creditos: "", Fecha: "", Beca: false}, alumnoFiltradoBackUp: {}, isEditable: false,  modal: false }
   },
   created (){
   	this.getID()
@@ -37,6 +37,18 @@ export default {
       var mensaje = "";
       if (!this.alumnoFiltrado.Nombre || this.alumnoFiltrado.Nombre.length <= 0 || this.alumnoFiltrado.Nombre.length > 40) {
         mensaje += "&#9888; Nombre tiene que tener entre 1 y 40 caracteres.<br>";
+      }
+      if (!this.alumnoFiltrado.Apellidos || this.alumnoFiltrado.Apellidos.length <= 0 || this.alumnoFiltrado.Apellidos.length > 80) {
+        mensaje += "&#9888; Apellidos tiene que tener entre 1 y 80 caracteres.<br>";
+      }
+      if (!this.alumnoFiltrado.Direccion || this.alumnoFiltrado.Direccion.length <= 0 || this.alumnoFiltrado.Direccion.length > 100) {
+        mensaje += "&#9888; Direccion tiene que tener entre 1 y 100 caracteres.<br>";
+      }
+      if (!this.alumnoFiltrado.Localidad || this.alumnoFiltrado.Localidad.length <= 0 || this.alumnoFiltrado.Localidad.length > 40) {
+        mensaje += "&#9888; Localidad tiene que tener entre 1 y 40 caracteres.<br>";
+      }
+      if (!this.alumnoFiltrado.Creditos || this.alumnoFiltrado.Creditos <= 0 || this.alumnoFiltrado.Creditos > 60) {
+        mensaje += "&#9888; Debe escoger entre 1 y 60 creditos maximo.<br>";
       }
 
       return mensaje;
